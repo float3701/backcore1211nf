@@ -1,25 +1,34 @@
+# / Backcore /
 
-Installation information
-=======
+## 关于整合包
+前几天看到有个liminal industries的整合包，特别火，于是我想到可以做一个包含更多level的整合包，但由于学业原因暂时停止开发，剩下的交给群友了qwq
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+目前想到的流程：
+- level0: 教程关，找到马尼拉房间获取补给，并且利用原石、石磨、木头做出基础传送装置
+- level1：机械动力，不涉及6.0物流
+  1. 收集木箱中资源，类似于原版挖矿
+  2. 建造全自动刷石机及后续产线
+  3. 建造自动收割刷新出来的木箱的机器（出图并且使用机械手不停切换level1 light controller方块（出图是必要流程））
+  4. 使用材料合成传送装置
+  5. 带上一些有用的物品，前往level2
+- level2：通用机械与物流
+  1. 收集一部分资源，此处引入锇锭来发展mek
+  2. 由于空间逼仄，可以设计成需要出图才能有空间做机器，类似于空岛生存，物资主要来源于从刷石机到一些可循环产物的自动化
+  3. 添加“撬棍”，需要锇锭合成，右键一些方块会获得掉落物，比如右键生锈的混凝土可能得到锈粉末，以此炼铁
+  4. 利用机械动力物流实现自动化
+- level11：高阶mek与rs
+  1. 建设rs
+  2. 制造核电厂
+  3. ...？(交给万能的群友)
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## 关于模组
+目前实现的东西：
+- 一些无法破坏的建筑方块
+- 每3个区块（48x48）为单位，随机摆放结构的地形生成方式
+- 0-1 1-0 1-2 2-1 2-11 传送装置
+- 一些资源
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+计划实现的东西：
+- 没有水槽模组，水槽我想个办法直接在这个模组里添加
+- level2的地形生成不够复杂
+- 合成中间物品由kubejs添加，这个mod主要负责地形生成
