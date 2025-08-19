@@ -1,0 +1,26 @@
+{
+  "itemGroup.backcore": "Back Core",
+
+  "block.backcore.carpet_block": "Carpet Block",
+  "block.backcore.wallpaper_block": "Wallpaper",
+  "block.backcore.ceiling_block": "Ceiling Block",
+  "block.backcore.lamp_block": "Lamp",
+  "block.backcore.wallpaper_block_2": "Wallpaper",
+  "block.backcore.concrete": "Concrete",
+  "block.backcore.concrete_supplies": "Concrete",
+  "block.backcore.wall": "Wall",
+  "block.backcore.level1_light_controller": "Level1 Light Controller",
+  "block.backcore.controllable_lamp": "Lamp",
+  "block.backcore.controllable_ceiling_lamp": "Ceiling Lamp",
+  "block.backcore.concrete_ceiling": "Concrete Ceiling",
+  "block.backcore.rusted_wall": "Rusted Wall",
+  "block.backcore.wall_decorated1": "Decorated Wall 1",
+  "block.backcore.wall_decorated2": "Decorated Wall 2",
+  "block.backcore.box1": "Box",
+
+  "item.backcore.almond_water_bottle": "Almond Water Bottle",
+  "item.backcore.teleport_item_0_1": "Teleport: level 0 -> 1",
+
+  "message.backcore.teleport_fail_level0": "You are not in level 0 to teleport",
+  "message.backcore.teleport_fail_level1": "You are not in level 1 to teleport"
+}

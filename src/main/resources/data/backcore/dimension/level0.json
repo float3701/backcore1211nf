@@ -1,0 +1,15 @@
+{
+  "type": "backcore:level0type",
+  "generator": {
+    "type": "flat",
+    "settings": {
+      "biome": "backcore:level0biome",
+
+      "layers": [
+        {"block": "backcore:carpet_block", "height": 1},
+        {"block": "minecraft:air", "height": 3},
+        {"block": "backcore:ceiling_block", "height": 3}
+      ]
+    }
+  }
+}

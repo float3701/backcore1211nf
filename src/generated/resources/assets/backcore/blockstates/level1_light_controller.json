@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "backcore:block/level1_light_controller"
+    }
+  }
+}

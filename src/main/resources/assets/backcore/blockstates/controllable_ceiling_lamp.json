@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "backcore:block/controllable_ceiling_lamp_on"
+    },
+    "lit=true": {
+      "model": "backcore:block/controllable_ceiling_lamp_off"
+    }
+  }
+}

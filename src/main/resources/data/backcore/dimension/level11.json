@@ -1,0 +1,14 @@
+{
+  "type": "backcore:level11type",
+  "generator": {
+    "type": "flat",
+    "settings": {
+      "biome": "minecraft:plain",
+
+      "layers": [
+        {"block": "minecraft:bedrock", "height": 1},
+        {"block": "minecraft:stone", "height": 1}
+      ]
+    }
+  }
+}

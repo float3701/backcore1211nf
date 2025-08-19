@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "backcore:block/wall_decorated2_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "backcore:block/wall_decorated2"
+    },
+    "axis=z": {
+      "model": "backcore:block/wall_decorated2_horizontal",
+      "x": 90
+    }
+  }
+}

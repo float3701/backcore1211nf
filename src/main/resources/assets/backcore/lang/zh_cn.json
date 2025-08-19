@@ -1,0 +1,24 @@
+{
+  "itemGroup.backcore": "后室核心",
+
+  "block.backcore.carpet_block": "地毯",
+  "block.backcore.wallpaper_block": "壁纸",
+  "block.backcore.ceiling_block": "天花板",
+  "block.backcore.lamp_block": "灯",
+  "block.backcore.wallpaper_block_2": "壁纸",
+  "block.backcore.concrete": "混凝土",
+  "block.backcore.wall": "白墙",
+  "block.backcore.concrete_supplies": "混凝土（如果你看到这个，联系模组作者）",
+  "item.backcore.almond_water_bottle": "杏仁水瓶",
+  "block.backcore.level1_light_controller": "Level1灯光控制器",
+  "block.backcore.controllable_lamp": "顶灯",
+  "block.backcore.controllable_ceiling_lamp": "天花板灯",
+  "block.backcore.concrete_ceiling": "混凝土天花板",
+  "block.backcore.rusted_wall": "锈蚀白墙",
+  "block.backcore.wall_decorated1": "白墙（装饰1）",
+  "block.backcore.wall_decorated2": "白墙（装饰2）",
+  "block.backcore.box1": "木箱",
+  "item.backcore.teleport_item_0_1": "传送装置: level 0 -> 1",
+  "message.backcore.teleport_fail_level0": "无法传送：你不在level 0",
+  "message.backcore.teleport_fail_level1": "无法传送：你不在level 0"
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "backcore:block/rusted_wall_end",
+    "side": "backcore:block/rusted_wall_side"
+  }
+}

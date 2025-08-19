@@ -1,0 +1,14 @@
+{
+  "type": "backcore:level1type",
+  "generator": {
+    "type": "flat",
+    "settings": {
+      "biome": "backcore:level1biome",
+
+      "layers": [
+        {"block": "minecraft:air", "height": 25},
+        {"block": "minecraft:barrier", "height": 18}
+      ]
+    }
+  }
+}
