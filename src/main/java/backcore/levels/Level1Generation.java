@@ -1,5 +1,9 @@
 package backcore.levels;
 
+import backcore.BackcoreBlocks;
+import net.minecraft.core.BlockPos;
+import net.neoforged.neoforge.event.level.ChunkEvent;
+
 public class Level1Generation extends LevelGeneration48x48{
 
     public static String[] templates = new String[]{
@@ -23,4 +27,11 @@ public class Level1Generation extends LevelGeneration48x48{
         return "backcore:level1";
     }
 
+    @Override
+    public void onChunkLoad(ChunkEvent.Load event) {
+        super.onChunkLoad(event);
+//        if (event.getChunk().getPos().x == 1 && event.getChunk().getPos().z == 1) {
+//            event.getChunk().setBlockState(new BlockPos(29, 18, 27), BackcoreBlocks.CONCRETE_BLOCK.get().defaultBlockState(), true);
+//        }
+    }
 }

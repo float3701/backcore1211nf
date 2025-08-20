@@ -33,7 +33,7 @@ public class BackcoreBlocks {
     public static final DeferredBlock<RotatedPillarBlock> CONCRETE_DECORATED1_BLOCK = BLOCKS.registerBlock("concrete_decorated1", RotatedPillarBlock::new, Block.Properties.of().sound(SoundType.STONE).strength(-1.0F, 3600000.0F).isValidSpawn((state, level, pos, type) -> false));
     public static final DeferredBlock<RotatedPillarBlock> CONCRETE_DECORATED2_BLOCK = BLOCKS.registerBlock("concrete_decorated2", RotatedPillarBlock::new, Block.Properties.of().sound(SoundType.STONE).strength(-1.0F, 3600000.0F).isValidSpawn((state, level, pos, type) -> false));
     public static final DeferredBlock<RotatedPillarBlock> CONCRETE_DECORATED3_BLOCK = BLOCKS.registerBlock("concrete_decorated3", RotatedPillarBlock::new, Block.Properties.of().sound(SoundType.STONE).strength(-1.0F, 3600000.0F).isValidSpawn((state, level, pos, type) -> false));
-    public static final DeferredBlock<Block> BOX1_BLOCK = BLOCKS.registerSimpleBlock("box1", Block.Properties.of().sound(SoundType.STONE).strength(0.5F, 1.0F).isValidSpawn((state, level, pos, type) -> false));
+    public static final DeferredBlock<Block> BOX1_BLOCK = BLOCKS.registerSimpleBlock("box1", Block.Properties.of().sound(SoundType.STONE).strength(2.5F, 1.0F).isValidSpawn((state, level, pos, type) -> false));
     public static final DeferredBlock<Block> WALL_STEEL_BLOCK = BLOCKS.registerSimpleBlock("wall_steel", Block.Properties.of().sound(SoundType.STONE).strength(-1.0F, 3600000.0F));
     public static final DeferredBlock<Block> WALL_STEEL_BLUE_BLOCK = BLOCKS.registerSimpleBlock("wall_steel_blue", Block.Properties.of().sound(SoundType.STONE).strength(-1.0F, 3600000.0F));
 

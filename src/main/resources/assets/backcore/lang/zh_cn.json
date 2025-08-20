@@ -19,6 +19,19 @@
   "block.backcore.wall_decorated2": "白墙（装饰2）",
   "block.backcore.box1": "木箱",
   "item.backcore.teleport_item_0_1": "传送装置: level 0 -> 1",
+  "item.backcore.teleport_item_1_0": "传送装置: level 1 -> 0",
+  "item.backcore.teleport_item_2_1": "传送装置: level 2 -> 1",
+  "item.backcore.teleport_item_2_11": "传送装置: level 2 -> 11",
   "message.backcore.teleport_fail_level0": "无法传送：你不在level 0",
-  "message.backcore.teleport_fail_level1": "无法传送：你不在level 0"
+  "message.backcore.teleport_fail_level1": "无法传送：你不在level 0",
+  "block.backcore.controllable_long_lamp": "荧光灯",
+  "block.backcore.wall_steel": "钢墙",
+  "block.backcore.wall_steel_blue": "蓝色钢墙",
+  "block.backcore.wall_decorated3": "白墙（装饰3）",
+  "block.backcore.rusted_concrete": "锈蚀混凝土",
+  "block.backcore.concrete_decorated1": "混凝土（装饰1）",
+  "block.backcore.concrete_decorated2": "混凝土（装饰2）",
+  "block.backcore.concrete_decorated3": "混凝土（装饰3）",
+  "item.backcore.teleport_item_1_base": "Level 1 传送装置基底",
+  "item.backcore.teleport_item_2_base": "Level 2 传送装置基底"
 }

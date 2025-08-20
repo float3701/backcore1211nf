@@ -1,5 +1,6 @@
 package backcore.items;
 
+import backcore.levels.Teleports;
 import backcore.utils.DimensionHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,7 +22,7 @@ public class TeleportItem_1_0 extends AbstractTeleportItem {
         if (level.dimension().location().toString().equals("backcore:level1")) {
             player.playSound(SoundEvents.PLAYER_TELEPORT);
             if (player instanceof ServerPlayer) {
-                player.teleportTo(DimensionHelper.getLevel(player.getServer(), "backcore", "level0"), 0, 2, 0, RelativeMovement.ALL, 0, 0);
+                Teleports.teleportToLevel0(level, (ServerPlayer) player);
             }
         } else {
             player.playSound(SoundEvents.ENDER_EYE_DEATH);
