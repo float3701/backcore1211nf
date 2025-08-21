@@ -1,5 +1,6 @@
 package backcore;
 
+import backcore.blocks.ExtractorBlockEntity;
 import backcore.blocks.Level1LightControllerBlockEntity;
 import backcore.datagen.BackcoreBlockStateProvider;
 import backcore.datagen.BackcoreItemModelProvider;
@@ -12,6 +13,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,10 +22,14 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.level.PistonEvent;
+import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -47,6 +53,14 @@ public class BackcoreMain {
             () -> BlockEntityType.Builder.of(
                             Level1LightControllerBlockEntity::new,
                             BackcoreBlocks.LEVEL1_LIGHT_CONTROLLER_BLOCK.get()
+                    )
+                    .build(null)
+    );
+    public static final Supplier<BlockEntityType<ExtractorBlockEntity>> EXTRACTOR_BLOCK_ENTITY_TYPE = BLOCK_ENTITY_TYPES.register(
+            "extractor_entity",
+            () -> BlockEntityType.Builder.of(
+                            ExtractorBlockEntity::new,
+                            BackcoreBlocks.EXTRACTOR_BLOCK.get()
                     )
                     .build(null)
     );
@@ -82,6 +96,10 @@ public class BackcoreMain {
 
     public BackcoreMain(IEventBus modEventBus, ModContainer modContainer) {
         initItemsAndBlocks(modEventBus);
+        modEventBus.addListener(this::registerCapabilities);
+        modEventBus.addListener(this::gatherData);
+
+        modContainer.registerConfig(ModConfig.Type.COMMON, BackcoreConfig.SPEC);
 
         // level0事件
         NeoForge.EVENT_BUS.addListener(Level0::chunkEvent);
@@ -96,8 +114,26 @@ public class BackcoreMain {
         NeoForge.EVENT_BUS.addListener(level2Generation::onChunkLoad);
         NeoForge.EVENT_BUS.addListener(level2Generation::onPlayerTick);
 
+    }
 
-        modEventBus.addListener(this::gatherData);
+    @SubscribeEvent
+    public void registerCapabilities(RegisterCapabilitiesEvent event) {
+//        event.registerBlock(
+//                Capabilities.ItemHandler.BLOCK,
+//                (level, pos, state, be, side) -> {
+//                    if (be instanceof ExtractorBlockEntity) {
+//                        BackcoreMain.LOGGER.info("yes");
+//                        return ((ExtractorBlockEntity) be).itemHandler;
+//                    }
+//                    BackcoreMain.LOGGER.info("what");
+//                    return null;
+//                },
+//                BackcoreBlocks.EXTRACTOR_BLOCK.get());
+        event.registerBlockEntity(
+                Capabilities.ItemHandler.BLOCK,
+                BackcoreMain.EXTRACTOR_BLOCK_ENTITY_TYPE.get(),
+                (be, side) -> new InvWrapper(be)
+        );
     }
 
     // 数据生成 [[NeoForge1.21.1教程]]

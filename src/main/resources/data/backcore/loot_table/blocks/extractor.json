@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:block",
+  "type": "minecraft:empty",
   "pools": [
     {
       "rolls": 1,
@@ -238,6 +238,18 @@
         }
       ],
       "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "components": {
+              "minecraft:enchantments": {
+                "levels": {
+                  "minecraft:fortune": 1
+                }
+              }
+            }
+          }
+        }
       ]
     },
     {
@@ -267,7 +279,20 @@
           "weight": 10
         }
       ],
-      "conditions": []
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "components": {
+              "minecraft:enchantments": {
+                "levels": {
+                  "minecraft:fortune": 2
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   ],
   "functions": []

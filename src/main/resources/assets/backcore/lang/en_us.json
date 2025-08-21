@@ -35,5 +35,7 @@
   "item.backcore.teleport_item_2_11": "Teleport: level 2 -> 11",
 
   "message.backcore.teleport_fail_level0": "You are not in level 0 to teleport",
-  "message.backcore.teleport_fail_level1": "You are not in level 1 to teleport"
+  "message.backcore.teleport_fail_level1": "You are not in level 1 to teleport",
+
+  "container.backcore.extractor": "Extractor"
 }

@@ -77,7 +77,9 @@ public abstract class LevelGeneration48x48 {
 
     @SubscribeEvent
     public void onChunkLoad(ChunkEvent.Load event) {
-        onGeneratingChunk(Objects.requireNonNull(event.getChunk().getLevel()), event.getChunk());
+        if (event.isNewChunk()) {
+            onGeneratingChunk(Objects.requireNonNull(event.getChunk().getLevel()), event.getChunk());
+        }
     }
 
     private void onGeneratingChunk(Level l, ChunkAccess c) {
