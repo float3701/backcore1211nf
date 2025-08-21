@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:block",
+  "type": "minecraft:empty",
   "pools": [
     {
       "rolls": 1,
@@ -19,21 +19,6 @@
             }
           ],
           "conditions": []
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:cobblestone",
-          "weight": 1,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 4,
-                "max": 16
-              }
-            }
-          ]
         },
         {
           "type": "minecraft:item",
@@ -238,6 +223,18 @@
         }
       ],
       "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "components": {
+              "minecraft:enchantments": {
+                "levels": {
+                  "minecraft:fortune": 1
+                }
+              }
+            }
+          }
+        }
       ]
     },
     {
@@ -267,7 +264,20 @@
           "weight": 10
         }
       ],
-      "conditions": []
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "components": {
+              "minecraft:enchantments": {
+                "levels": {
+                  "minecraft:fortune": 2
+                }
+              }
+            }
+          }
+        }
+      ]
     }
   ],
   "functions": []

@@ -1,6 +1,7 @@
 package backcore.blocks;
 
 import backcore.BackcoreBlocks;
+import backcore.BackcoreConfig;
 import backcore.BackcoreMain;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
@@ -112,9 +113,9 @@ public class ExtractorBlockEntity extends BaseContainerBlockEntity {
         if (blockEntity instanceof ExtractorBlockEntity e) {
             e.remainingTicks--;
             if (e.remainingTicks <= 0) {
-                e.remainingTicks = 20;
+                e.remainingTicks = BackcoreConfig.EXTRACTOR_RANGE.getAsInt();
                 if (level instanceof ServerLevel serverLevel) {
-                    if (level.getBlockState(pos.below()).is(BackcoreBlocks.CONCRETE_SUPPLIES_BLOCK.get())) {
+                    if (level.getBlockState(pos.below()).is(BackcoreBlocks.CONCRETE_SUPPLIES_BLOCK.get()) || level.getBlockState(pos.below().below()).is(BackcoreBlocks.CONCRETE_SUPPLIES_BLOCK.get())) {
                         LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.parse("backcore:blocks/extractor")));
 
                         LootParams.Builder builder = new LootParams.Builder(serverLevel);

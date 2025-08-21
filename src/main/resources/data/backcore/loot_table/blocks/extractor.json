@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:empty",
+  "type": "minecraft:block",
   "pools": [
     {
       "rolls": 1,
@@ -101,7 +101,7 @@
               "count": {
                 "type": "minecraft:binomial",
                 "n": 16,
-                "p": 0.6
+                "p": 0.5
               }
             }
           ],
@@ -114,7 +114,7 @@
           "functions": [
             {
               "function": "minecraft:set_count",
-              "count": 8
+              "count": 2
             }
           ]
         },
@@ -127,7 +127,7 @@
               "count": {
                 "type": "minecraft:binomial",
                 "n": 7,
-                "p": 0.6
+                "p": 0.4
               }
             }
           ]
@@ -144,10 +144,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:wheat_seeds"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:potato",
           "functions": [
             {
@@ -155,7 +151,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 6
+                "max": 3
               },
               "conditions": []
             }
@@ -170,7 +166,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 8
+                "max": 3
               }
             }
           ]
@@ -238,18 +234,6 @@
         }
       ],
       "conditions": [
-        {
-          "condition": "minecraft:match_tool",
-          "predicate": {
-            "components": {
-              "minecraft:enchantments": {
-                "levels": {
-                  "minecraft:fortune": 1
-                }
-              }
-            }
-          }
-        }
       ]
     },
     {
@@ -257,11 +241,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond"
+          "name": "minecraft:diamond",
+          "weight": 1
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:raw_gold",
+          "weight": 2,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -276,23 +262,10 @@
         },
         {
           "type": "minecraft:empty",
-          "weight": 10
+          "weight": 15
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:match_tool",
-          "predicate": {
-            "components": {
-              "minecraft:enchantments": {
-                "levels": {
-                  "minecraft:fortune": 2
-                }
-              }
-            }
-          }
-        }
-      ]
+      "conditions": []
     }
   ],
   "functions": []

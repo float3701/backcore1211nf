@@ -13,7 +13,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -25,10 +24,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.neoforged.neoforge.event.level.PistonEvent;
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -99,7 +98,7 @@ public class BackcoreMain {
         modEventBus.addListener(this::registerCapabilities);
         modEventBus.addListener(this::gatherData);
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, BackcoreConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.SERVER, BackcoreConfig.SPEC);
 
         // level0事件
         NeoForge.EVENT_BUS.addListener(Level0::chunkEvent);
@@ -113,7 +112,6 @@ public class BackcoreMain {
         Level2Generation level2Generation = new Level2Generation();
         NeoForge.EVENT_BUS.addListener(level2Generation::onChunkLoad);
         NeoForge.EVENT_BUS.addListener(level2Generation::onPlayerTick);
-
     }
 
     @SubscribeEvent
