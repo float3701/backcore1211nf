@@ -37,6 +37,8 @@ public class BackcoreBlocks {
     public static final DeferredBlock<Block> BOX1_BLOCK = BLOCKS.registerSimpleBlock("box1", Block.Properties.of().sound(SoundType.STONE).strength(2.5F, 1.0F).isValidSpawn((state, level, pos, type) -> false));
     public static final DeferredBlock<Block> WALL_STEEL_BLOCK = BLOCKS.registerSimpleBlock("wall_steel", Block.Properties.of().sound(SoundType.STONE).strength(-1.0F, 3600000.0F));
     public static final DeferredBlock<Block> WALL_STEEL_BLUE_BLOCK = BLOCKS.registerSimpleBlock("wall_steel_blue", Block.Properties.of().sound(SoundType.STONE).strength(-1.0F, 3600000.0F));
+    public static final DeferredBlock<Block> TANK_BLOCK = BLOCKS.registerBlock("tank", TankBlock::new, Block.Properties.of().sound(SoundType.STONE).strength(1.0F, 3600000.0F));
+
 
     // 特殊方块
     public static final DeferredBlock<ControllableLightSourceTransparentBlock> CONTROLLABLE_LAMP_BLOCK = BLOCKS.registerBlock("controllable_lamp", ControllableLampBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(3.0F, 0.5F));
@@ -71,7 +73,8 @@ public class BackcoreBlocks {
             CONCRETE_DECORATED3_BLOCK,
             BOX1_BLOCK,
             WALL_STEEL_BLOCK,
-            WALL_STEEL_BLUE_BLOCK
+            WALL_STEEL_BLUE_BLOCK,
+            TANK_BLOCK
     );
 
     // 自动生成：六面相同模型
@@ -89,7 +92,8 @@ public class BackcoreBlocks {
             CONCRETE_CEILING_BLOCK,
             BOX1_BLOCK,
             WALL_STEEL_BLOCK,
-            WALL_STEEL_BLUE_BLOCK
+            WALL_STEEL_BLUE_BLOCK,
+            TANK_BLOCK
     );
 
     // 自动生成：_side _end 柱子模型
