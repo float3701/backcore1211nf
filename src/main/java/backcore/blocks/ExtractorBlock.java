@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ExtractorBlock extends RotatedPillarBlock implements EntityBlock {
+public class ExtractorBlock extends Block implements EntityBlock {
 
     public ExtractorBlock(Properties properties) {
         super(properties);

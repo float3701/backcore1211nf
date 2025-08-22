@@ -2,6 +2,7 @@ package backcore;
 
 import backcore.blocks.ExtractorBlockEntity;
 import backcore.blocks.Level1LightControllerBlockEntity;
+import backcore.blocks.TankFluidHandler;
 import backcore.datagen.BackcoreBlockStateProvider;
 import backcore.datagen.BackcoreItemModelProvider;
 import backcore.levels.Level0;
@@ -28,6 +29,8 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.items.wrapper.InvWrapper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -131,6 +134,11 @@ public class BackcoreMain {
                 Capabilities.ItemHandler.BLOCK,
                 BackcoreMain.EXTRACTOR_BLOCK_ENTITY_TYPE.get(),
                 (be, side) -> new InvWrapper(be)
+        );
+        event.registerBlock(
+                Capabilities.FluidHandler.BLOCK,
+                (level, pos, state, be, side) -> new TankFluidHandler(),
+                BackcoreBlocks.TANK_BLOCK.get()
         );
     }
 
